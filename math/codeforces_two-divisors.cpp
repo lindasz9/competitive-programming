@@ -8,21 +8,19 @@ int main() {
     cin >> t;  // Number of test cases
     while (t--) {
         int a, b;
-        cin >> a >> b;  // Input numbers
-        int after = 0, aa = a, bb = b;  // Store original values of a and b
-
-        if (!(b % a)) after = b / a;  // If a divides b, compute the quotient
+        cin >> a >> b;  // Read the two largest divisors
 
         // Compute GCD of a and b using Euclidean algorithm
-        while (a) {
-            b %= a;
-            swap(a, b);
+        int x = a, y = b;
+        while (x) {
+            y %= x;
+            swap(x, y);
         }
+        int gcd = y;  // GCD of a and b
 
-        int res = b;  // b now holds the GCD
-        res = bb / res * aa;  // Compute LCM using formula LCM(a,b) = a*b/GCD(a,b)
+        // LCM formula: lcm(a,b) = a * b / gcd(a,b)
+        long long res = 1LL * a * b / gcd;
 
-        if (!(bb % aa)) res = res / aa * bb;  // Adjust LCM if bb is divisible by aa
-        cout << res << endl;  // Output result
+        cout << res << endl;  // Output the reconstructed number
     }
 }
