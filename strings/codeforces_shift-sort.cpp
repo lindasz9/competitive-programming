@@ -1,31 +1,35 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
+
 int main() {
-    ios::sync_with_stdio(false); cin.tie(0); // Fast I/O
+    ios::sync_with_stdio(false); cin.tie(0); // Fast input/output
 
     int t;
-    cin >> t;  // Number of test cases
+    cin >> t; // Number of test cases
     while (t--) {
         int n;
-        cin >> n;  // Length of the binary string
+        cin >> n; // Length of the binary string
         string s;
-        cin >> s;  // Input binary string
+        cin >> s; // The binary string itself
 
-        int cnt1 = 0, cnt0 = 0;  // Counters for '1's and '0's
+        int cnt1 = 0, cnt0 = 0;
+        // Count the number of 0s and 1s in the string
         for (int i = 0; i < n; i++) {
             if (s[i] == '0') cnt0++;
             else cnt1++;
         }
 
-        int wrong = 0;  // Count of misplaced characters
+        int wrong = 0;
+        // Determine the number of 'misplaced' characters
+        // '0's should be in the first cnt0 positions, '1's in the rest
         for (int i = 0; i < n; i++) {
-            // '0's should be in the first cnt0 positions
-            // '1's should be in the last cnt1 positions
-            if ((s[i] == '0' && i >= cnt0) || (s[i] == '1' && i < n - cnt1)) wrong++;
+            if ((s[i] == '0' && i >= cnt0) || (s[i] == '1' && i < n - cnt1)) 
+                wrong++; // Count each character that is out of its target segment
         }
 
-        // Minimum swaps needed is half of the misplaced positions, rounding up
+        // Minimum operations:
+        // Each operation can fix up to 2 misplaced characters
+        // If 'wrong' is odd, we need an extra operation
         cout << (wrong / 2 + wrong % 2) << endl;
     }
 }
