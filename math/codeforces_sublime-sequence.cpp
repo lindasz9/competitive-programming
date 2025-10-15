@@ -8,10 +8,14 @@ int main() {
     cin >> t;  // Number of test cases
     while (t--) {
         int x, n;
-        cin >> x >> n;  // Input values
+        cin >> x >> n;  // Read the integer x and sequence length n
 
-        // If n is odd, output x; if even, output 0
-        if (n % 2) cout << x << endl;
-        else cout << 0 << endl;
+        // Sequence is x, -x, x, -x, ...
+        // If n is odd, there is one extra x, so sum = x
+        // If n is even, x and -x cancel out in pairs, so sum = 0
+        if (n % 2) 
+            cout << x << endl;
+        else 
+            cout << 0 << endl;
     }
 }
