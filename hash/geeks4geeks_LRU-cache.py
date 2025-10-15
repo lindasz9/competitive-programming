@@ -4,7 +4,7 @@ from collections import deque
 
 class LRUCache:
     def __init__(self, cap):
-        self.cap = cap                # Maximum capacity of the cache
+        self.cap = cap               # Maximum capacity of the cache
         self.cache = {}              # Stores key-value pairs
         self.q = deque()             # Maintains the order of key usage (oldest at the front)
 
