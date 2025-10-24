@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-using pii = pair<int, int>;
 
 int main() {
     ios::sync_with_stdio(false); cin.tie(0);
@@ -25,8 +23,7 @@ int main() {
             if (m >= a[mid]) {
                 ans = mid;
                 l = mid + 1;
-            }
-            else r = mid - 1;
+            } else r = mid - 1;
         }
 
         cout << ans + 1 << endl;  // Number of shops Vasiliy can buy from
