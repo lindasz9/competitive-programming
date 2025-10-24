@@ -2,7 +2,7 @@
 using namespace std;
 using ll = long long;
 
-ll m = 1000000007; // Modulo
+ll m = 1e9 + 7; // Modulo
 
 // Function to compute (F_n, F_{n+1}) using fast doubling
 pair<ll, ll> fib(ll n) {
