@@ -3,8 +3,6 @@ using namespace std;
 using ll = long long;
 
 int main() {
-    ios::sync_with_stdio(false); cin.tie(0); // Fast input/output
-
     int t;
     cin >> t; // Number of test cases
     while (t--) {
