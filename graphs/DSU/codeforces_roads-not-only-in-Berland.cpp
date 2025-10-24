@@ -1,11 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
 using pii = pair<int, int>;
 
 int main() {
-    ios::sync_with_stdio(false); cin.tie(0); // Fast input/output
-
     int n;
     cin >> n; // Number of cities
     vector<int> par(n + 1); // Union-find parent array
