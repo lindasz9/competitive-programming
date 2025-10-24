@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
 
 const int MAXLEN = 100002;
 vector<vector<bool>> st(MAXLEN*4, vector<bool>(26)); // segment tree storing character presence for each segment
